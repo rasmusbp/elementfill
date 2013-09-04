@@ -9,16 +9,16 @@
 ```
 <div class="module">no element query attached</div>
 <div class="module" data-elementfill data-max-width="1280" data-min-width="800">
-	<div class="query-info">(queries: max: 1280px, min: 800px)</div>
+	...
 </div>
 <div class="module" data-elementfill data-max-width="768" data-min-width="480">
-	<div class="query-info">(queries: max: 768px, min: 480px)</div>
+	...
 </div>
 <div class="module" data-elementfill data-min-width="480">
-	<div class="query-info">(queries: max: none, min: 800px)</div>
+	...
 </div>
 <div class="module" data-elementfill data-max-width="768">
-	<div class="query-info">(queries: max: 640px, min: none)</div>
+	...
 </div>
 ```
 
