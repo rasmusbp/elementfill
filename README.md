@@ -33,11 +33,11 @@ window.elementfill();
 Only update specific elements (useful if elements are beign added dynamically to the DOM e.g. via client-side templating)
 ```
 // Pass in a DIV element 
-var item = getElementByClassName('single-item');
+var item = getElementsByClassName('single-item');
 window.elementfill(item);
 
 // ... or an array of DIV
-var items = getElementByClassName('items');
+var items = getElementsByClassName('items');
 window.elementfill(items);
 
 ```
