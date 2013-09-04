@@ -7,7 +7,6 @@
 
 ### HTML
 ```
-<div class="module">no element query attached</div>
 <div class="module" data-elementfill data-max-width="1280" data-min-width="800">
 	...
 </div>
