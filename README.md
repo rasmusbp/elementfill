@@ -6,8 +6,8 @@
 ## About:
 A simple polyfill that adds CSS hooks to DOM elements _(for now only DIVs)_ based on the element's width.
 
-Instead of relying on ``@media``queries to control the styling in RWD, you sometimes need to be able to control the indivual elements.
-This polyfill helps you doing that!
+Instead of relying on ``@media`` queries to control the styling and layout of a responsive website, you sometimes need a bit more control over individual elements.
+This polyfill helps you achieve that!
 
 
 ## Usage:
