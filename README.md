@@ -3,6 +3,13 @@
 * Author: Rasmus Bangsted Pedersen (c) 2013
 * License: MIT/GPLv2
 
+## About:
+A simple polyfill that adds CSS hooks to DOM elements _(for now only DIVs)_ based on the element's width.
+
+Instead of relying on ``@media``queries to control the styling in RWD, you sometimes need to be able to control the indivual elements.
+This polyfill helps you doing that!
+
+
 ## Usage:
 
 ### HTML
