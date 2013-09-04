@@ -41,3 +41,18 @@ var items = getElementsByClassName('items');
 window.elementfill(items);
 
 ```
+
+### CSS
+Depending on the width of the element and the queries applied, the following CSS classes will be toggled on the element:
+```
+.elq-abovemax {
+	/* The element is wider than the specified max-width */
+}
+.elq-belowmin {
+	/* The element is more narrow than the specified min-width */
+}
+.elq-inrange {
+	/* The element width is between the min-width and max-width */
+}
+
+```
