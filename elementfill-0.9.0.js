@@ -1,6 +1,22 @@
 (function( w ){
 
 	'use strict';
+
+	w.ef_classHandler = function ( el, o ) {
+		var reset,
+			hasClassList = el.classList;
+
+		if ( hasClassList ) {
+			for (var i = o.remove.length - 1; i >= 0; i--) {
+				el.classList.remove(o.remove[i]);
+			}
+			el.classList.add(o.add);
+		} else {
+			reset = /\W*elq-*[a-z]+/;
+			el.className = el.className.replace(reset, '');
+			el.className = el.className + ' ' + o.add;
+		}
+	};
 	
 	w.elementfill = function( element ) {
 
@@ -12,23 +28,30 @@
 		for( var i = 0, il = div.length; i < il; i++ ){
 			if( div[ i ].getAttribute( 'data-elementfill' ) !== null ) {
 
-				var el = div[ i ],
-					width = el.offsetWidth,
+				var el 		= div[ i ],
+					width 	= el.offsetWidth,
 					maxData = el.getAttribute( 'data-max-width' ),
 					minData = el.getAttribute( 'data-min-width' ),
-					max = (maxData !== null) ? parseInt(maxData, 10) : window.innerWidth,
-					min = (minData !== null) ? parseInt(minData, 10) : 0;
+					max 	= (maxData !== null) ? parseInt(maxData, 10) : window.innerWidth,
+					min 	= (minData !== null) ? parseInt(minData, 10) : 0;
 
-				// reset CSS classes
-				el.className = el.className.replace(/\W*elq-*[a-z]+/, '');
 				
 				// set CSS classes
 				if ( width > max ) {
-					el.className = el.className + ' elq-abovemax';
+					ef_classHandler( el, {
+						add: 'elq-abovemax',
+						remove: ['elq-belowmin', 'elq-inrange']
+					});
 				} else if ( width < min ) {
-					el.className = el.className + ' elq-belowmin';
+					ef_classHandler( el, {
+						add: 'elq-belowmin',
+						remove: ['elq-abovemax', 'elq-inrange']
+					});
 				} else {
-					el.className = el.className + ' elq-inrange';
+					ef_classHandler( el, {
+						add: 'elq-inrange',
+						remove: ['elq-abovemax', 'elq-belowmin']
+					});
 				}
 
 			}
